@@ -27,10 +27,8 @@ ENV EDITOR=vi \
 # Create a dir to mount host's .ssh folder into
 RUN mkdir -p /home/$USERNAME/.host_ssh
 
-# Copy `ssh_startup` and pipe into .ashrc for startup running
-RUN touch /home/$USERNAME/.profile
+# Copy `ssh_startup` to be run while attaching from vscode
 COPY ssh_startup /home/$USERNAME/
-RUN echo "source /home/$USERNAME/ssh_startup" >> /home/$USERNAME/.profile
 
 # Change back user to ROOT
 USER root

@@ -3,8 +3,7 @@
 RUNNING_AGENT="`ps ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'`"
 if [ "$RUNNING_AGENT" = "0" ]; then
    # Launch a new instance of the agent
-   ssh-agent -s &> $HOME/.ssh/ssh-agent
+   eval `ssh-agent -s`
+   # add host's ssh key for connection to github
+   ssh-add $HOME/.host_ssh/id_ed25519 > /dev/null 2>&1
 fi
-eval `cat $HOME/.ssh/ssh-agent`
-# add host's ssh key for connection to github
-ssh-add $HOME/.host_ssh/id_ed25519 > /dev/null 2>&1
