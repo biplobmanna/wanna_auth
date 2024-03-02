@@ -27,5 +27,8 @@ ENV EDITOR=vi \
 # Create a dir to mount host's .ssh folder into
 RUN mkdir -p /home/$USERNAME/.host_ssh
 
+# Copy ssh_startup file into $HOME
+COPY ssh_startup /home/$USERNAME/
+
 # Change back user to ROOT
 USER root

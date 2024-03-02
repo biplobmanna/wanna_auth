@@ -15,7 +15,7 @@
 			}
 		}
 	},
-	"postCreateCommand": "go mod download",
+	"postCreateCommand": "/bin/sh /home/vscode/ssh_startup",
 	"runArgs": [
 		"-u",
 		"vscode",
