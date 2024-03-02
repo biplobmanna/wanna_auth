@@ -24,11 +24,11 @@ USER $USERNAME
 ENV EDITOR=vi \
     LANG=en_US.UTF-8
 
-# Create a dir to mount host's .ssh folder into
+# github with ssh is not runnning normally, so let's force  it
+# Create a dir to mount host's .ssh folder into to be used by script
 RUN mkdir -p /home/$USERNAME/.host_ssh
-
-# Copy `ssh_startup` to be run while attaching from vscode
-COPY ssh_startup /home/$USERNAME/
+# copy the script using which we shall force github to run
+COPY force_ssh_github /home/$USERNAME/
 
 # Change back user to ROOT
 USER root

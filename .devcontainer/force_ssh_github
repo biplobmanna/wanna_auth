@@ -5,5 +5,5 @@ if [ "$RUNNING_AGENT" = "0" ]; then
    # Launch a new instance of the agent
    eval `ssh-agent -s`
    # add host's ssh key for connection to github
-   ssh-add $HOME/.host_ssh/id_ed25519 > /dev/null 2>&1
+   ssh-add $HOME/.host_ssh/id_ed25519
 fi

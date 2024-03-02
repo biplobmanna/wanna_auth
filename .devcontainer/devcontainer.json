@@ -16,7 +16,7 @@
 		}
 	},
 	"postCreateCommand": "echo \"Container Created Successfully!\"",
-	"postStartCommand": "/bin/sh /home/vscode/ssh_startup",
+	// "postStartCommand": "/bin/sh /home/vscode/ssh_startup",
 	"runArgs": [
 		"-u",
 		"vscode",
