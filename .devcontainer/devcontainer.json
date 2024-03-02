@@ -15,7 +15,7 @@
 			}
 		}
 	},
-	"postCreateCommand": "/bin/sh /home/vscode/ssh_startup",
+	"postCreateCommand": "echo \"everything is up and running\"",
 	"runArgs": [
 		"-u",
 		"vscode",
